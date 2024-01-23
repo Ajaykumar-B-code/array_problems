@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,15 +11,21 @@ namespace duplicate_elements
     {
         static void Main(string[] args)
         {
-            int n = Convert.ToInt32(Console.ReadLine());
+            int[,] a = { { 1, 2, 3 },
+                          { 4, 5,7 } };
             int sum = 0;
-            while(n > 0)
+            for (int i = 0;i < a.GetLength(0) ; i++)
             {
-                int digit=n%10;
-                sum += digit;
-                n /= 10;
+               
+                for (int j=0;j< a.GetLength(1) ; j++)
+                {
+                    
+                    sum += a[i,j];
+                    
+                }
+                Console.WriteLine($"The sum of the row {i} is {sum}");
+
             }
-            Console.WriteLine($"the sum of the digit in the number is {sum}");
             Console.ReadLine();
 
 
