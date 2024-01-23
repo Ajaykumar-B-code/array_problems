@@ -10,23 +10,15 @@ namespace duplicate_elements
     {
         static void Main(string[] args)
         {
-            int[] arr = { 1, 3, 2, 1, 1,2 };
-            int maxnum = arr[0];
-            int minnum = arr[0];
-            for(int i=0;i<arr.Length; i++) 
+            int n = 8;
+           for(int i = 0; i < n; i++)
             {
-                if (arr[i] > maxnum)
+                for(int j = 0; j < n - i; j++)
                 {
-                    maxnum = arr[i];
+                    Console.Write("*");
                 }
-                if (arr[i]<minnum)
-                {
-                    minnum = arr[i];
-                }
+                Console.WriteLine("");
             }
-            Console.WriteLine("Maximum number :" + maxnum);
-            Console.WriteLine("Minimum number : " + minnum);
-
 
             Console.ReadLine();
 
