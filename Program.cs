@@ -10,27 +10,40 @@ namespace duplicate_elements
     {
         static void Main(string[] args)
         {
-            int n = 5;
-            for(int i=0; i < n; i++)
+            string sentance = "Hello world!";
+            string temp = "";
+            for (int i = 0;i<sentance.Length ;i++)
             {
-                for(int j=0; j < n; j++)
+                
+                temp += sentance[i];
+                char c = sentance[i];
+                if (c == ' ') 
                 {
-                    if(i== 0||j==0||i==n-1||j==n-1)
-                    {
-                        Console.Write("*");
-                    }
-                    else
-                    {
-                        Console.Write(" ");
-                    }
+                    Console.Write(reverse(temp));
+                    Console.Write(" ");
+                    temp = "";
                 }
-                Console.WriteLine();
             }
+            Console.WriteLine(reverse(temp));
+            
             
 
             Console.ReadLine();
 
 
+        }
+
+        static string reverse(string s)
+        {
+            char[] temp = s.ToCharArray();
+
+            string ReverseString = "";
+            for(int i = s.Length - 1; i >= 0; i--)
+            {
+                ReverseString += temp[i];
+            }
+          
+            return ReverseString;
         }
     }
 }
