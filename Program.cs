@@ -10,15 +10,23 @@ namespace duplicate_elements
     {
         static void Main(string[] args)
         {
-            int n = 8;
-           for(int i = 0; i < n; i++)
+            int[] arr = { 1, 2, 1, 4, 5, 5, 7, 4,};
+            Array.Sort(arr);
+            int n = arr.Length;
+            int var = arr[0];
+            for(int i=0;i<arr.Length; i++)
             {
-                for(int j = 0; j < n - i; j++)
+                if (arr[i] != var)
                 {
-                    Console.Write("*");
+                    Console.WriteLine(var);
+                    var = arr[i];
                 }
-                Console.WriteLine("");
             }
+            if (arr[n-1]!=var)
+            {
+                Console.WriteLine(var);
+            }
+            
 
             Console.ReadLine();
 
