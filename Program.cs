@@ -10,40 +10,20 @@ namespace duplicate_elements
     {
         static void Main(string[] args)
         {
-            string sentance = "Hello world!";
-            string temp = "";
-            for (int i = 0;i<sentance.Length ;i++)
+            int n = Convert.ToInt32(Console.ReadLine());
+            int sum = 0;
+            while(n > 0)
             {
-                
-                temp += sentance[i];
-                char c = sentance[i];
-                if (c == ' ') 
-                {
-                    Console.Write(reverse(temp));
-                    Console.Write(" ");
-                    temp = "";
-                }
+                int digit=n%10;
+                sum += digit;
+                n /= 10;
             }
-            Console.WriteLine(reverse(temp));
-            
-            
-
+            Console.WriteLine($"the sum of the digit in the number is {sum}");
             Console.ReadLine();
 
 
         }
 
-        static string reverse(string s)
-        {
-            char[] temp = s.ToCharArray();
-
-            string ReverseString = "";
-            for(int i = s.Length - 1; i >= 0; i--)
-            {
-                ReverseString += temp[i];
-            }
-          
-            return ReverseString;
-        }
+        
     }
 }
